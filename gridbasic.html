@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <style>
+        .wrapper {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: 100px;
+            background: black;
+        }
+        
+        .box1 {
+            grid-column-start: 1;
+            grid-column-end: 4;
+            grid-row-start: 1;
+            grid-row-end: 3;
+        }
+        
+        .box2 {
+            grid-column-start: 1;
+            grid-row-start: 3;
+            grid-row-end: 5;
+        }
+        
+        .box {
+            background: red;
+            margin: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="box1 box">One</div>
+        <div class="box2 box">Two</div>
+        <div class="box3 box">Three</div>
+        <div class="box4 box">Four</div>
+        <div class="box5 box">Five</div>
+    </div>
+</body>
+
+</html>

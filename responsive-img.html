@@ -1,0 +1,35 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+        }
+        
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+        /*Original Image:2400*1008;
+        Aspect ratio in %:(1008%2400)*100
+        */
+        /*Box-Model concept is used*/
+        
+        .bg-image {
+            width: 100%;
+            padding-top: 42%;
+            background: url('scones.jpg') no-repeat center;
+            background-size: contain;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="container">
+        <div class="bg-image"></div>
+    </main>
+</body>
+
+</html>
