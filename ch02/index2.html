@@ -1,0 +1,101 @@
+<html>
+
+<head>
+    <style>
+        #deals {
+            display: flex;
+            /* Flex layout so items have equal height  */
+            flex-flow: column wrap;
+            /* Allow items to wrap into multiple lines */
+        }
+        
+        #deal {
+            display: flex;
+            /* Flex layout so items have equal height  */
+            flex-flow: column wrap;
+            /* Allow items to wrap into multiple lines */
+        }
+        
+        .sale-item {
+            display: flex;
+            /* Lay out each item using flex layout */
+            flex-flow: column;
+            /* Lay out item’s contents vertically  */
+        }
+        
+        .sale-item>img {
+            order: -1;
+            /* Shift image before other content (in visual order) */
+            align-self: center;
+            /* Center the image cross-wise (horizontally)         */
+        }
+        
+        .sale-item>button {
+            margin-top: auto;
+            /* Auto top margin pushes button to bottom */
+        }
+        
+        img {
+            max-width: 20%;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="deals">
+        <section class="sale-item">
+            <h1>Computer Starter Kit</h1>
+            <p>This is the best computer money can buy, if you don’t have much money.
+                <ul>
+                    <li>Computer
+                        <li>Monitor
+                            <li>Keyboard
+                                <li>Mouse
+                </ul>
+                <img src="scones.jpg" alt="You get: a white computer with matching peripherals.">
+                <button>BUY NOW</button>
+        </section>
+        <section class="sale-item">
+            <h1>Computer Starter Kit</h1>
+            <p>This is the best computer money can buy, if you don’t have much money.
+                <ul>
+                    <li>Computer
+                        <li>Monitor
+                            <li>Keyboard
+                                <li>Mouse
+                </ul>
+                <img src="scones.jpg" alt="You get: a white computer with matching peripherals.">
+                <button>BUY NOW</button>
+        </section>
+
+    </section>
+    <section id="deal">
+        <section class="sale-item">
+            <h1>Computer Starter Kit</h1>
+            <p>This is the best computer money can buy, if you don’t have much money.
+                <ul>
+                    <li>Computer
+                        <li>Monitor
+                            <li>Keyboard
+                                <li>Mouse
+                </ul>
+                <img src="scones.jpg" alt="You get: a white computer with matching peripherals.">
+                <button>BUY NOW</button>
+        </section>
+        <section class="sale-item">
+            <h1>Computer Starter Kit</h1>
+            <p>This is the best computer money can buy, if you don’t have much money.
+                <ul>
+                    <li>Computer
+                        <li>Monitor
+                            <li>Keyboard
+                                <li>Mouse
+                </ul>
+                <img src="scones.jpg" alt="You get: a white computer with matching peripherals.">
+                <button>BUY NOW</button>
+        </section>
+
+    </section>
+</body>
+
+</html>
