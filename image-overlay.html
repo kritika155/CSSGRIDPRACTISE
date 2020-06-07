@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Image Overlay Icon using HTML and CSS
+    </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            text-align: center;
+        }
+        
+        h1 {
+            color: green;
+        }
+        /* Image styling */
+        
+        img {
+            padding: 5px;
+            height: 225px;
+            width: 225px;
+            border: 2px solid gray;
+            box-shadow: 2px 4px #888888;
+        }
+        /* Overlay styling */
+        
+        .overlay {
+            position: absolute;
+            top: 16.5%;
+            left: 41.1%;
+            transition: .3s ease;
+            background-color: gray;
+            width: 225px;
+            height: 225px;
+            opacity: 0;
+        }
+        /* Overlay hover */
+        
+        .img:hover .overlay {
+            opacity: 1;
+        }
+        /* Icon styling */
+        
+        .icon {
+            color: white;
+            font-size: 92px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>GeeksforGeeks</h1>
+        <b>Image Overlay Icon using HTML and CSS</b>
+        <div class="img">
+            <img src="https://media.geeksforgeeks.org/wp-content/uploads/20200326201748/download312.png" alt="Geeksforgeeks">
+            <div class="overlay">
+                <a href="#" class="icon">
+                    <i class="fa fa-user"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
