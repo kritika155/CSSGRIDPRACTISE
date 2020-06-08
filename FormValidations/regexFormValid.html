@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <h1 class="text-white text-center font-weight-bold bg-success" style="font-size: 55px;">
+        Complete Form Validation Using RegEx In JavaScript 2020 </h1>
+
+    <div class="container"><br>
+
+        <div class="col-lg-6 m-auto d-block">
+
+            <form action="#" onsubmit="return validation()" class="bg-light">
+
+                <div class="form-group">
+                    <label for="user" class="font-weight-bold"> Username: </label>
+                    <input type="text" name="user" class="form-control" id="username" autocomplete="off">
+                    <span id="usererror" class="text-danger font-weight-bold"> </span>
+                </div>
+
+                <div class="form-group">
+                    <label class="font-weight-bold"> Password: </label>
+                    <input type="text" name="pass" class="form-control" id="password" autocomplete="off">
+                    <span id="passworderror" class="text-danger font-weight-bold"> </span>
+                </div>
+
+                <div class="form-group">
+                    <label class="font-weight-bold"> Confirm Password: </label>
+                    <input type="text" name="conpass" class="form-control" id="cpassword" autocomplete="off">
+                    <span id="cpassworderror" class="text-danger font-weight-bold"> </span>
+                </div>
+                <div class="form-group">
+                    <label class="font-weight-bold"> Email: </label>
+                    <input type="text" name="emails" class="form-control" id="email" autocomplete="off">
+                    <span id="emailerror" class="text-danger font-weight-bold"> </span>
+                </div>
+                <div class="form-group">
+                    <label class="font-weight-bold"> Mobile Number: </label>
+                    <input type="text" name="mobile" class="form-control" id="mobileNumber" autocomplete="off">
+                    <span id="mobileerror" class="text-danger font-weight-bold"> </span>
+                </div>
+
+                <input type="submit" name="submit" value="submit" class="btn btn-success" autocomplete="off">
+
+
+            </form><br><br>
+
+
+        </div>
+    </div>
+    <script type="text/javascript">
+        function validation() {
+
+            var user = document.getElementById('username').value;
+            var pass = document.getElementById('password').value;
+            var confirmpass = document.getElementById('cpassword').value;
+            var mobileNumber = document.getElementById('mobileNumber').value;
+            var emails = document.getElementById('email').value;
+            var userCheck = /^[A-Za-z. ]{3,30}$/;
+            var passwordCheck = /^(?=.*[0-9])(?=.*[!@#$%^&])[a-zA-Z0-9!@#$%^&*]{8,16}$/;
+            /*(?=.*[0-9])->The String must contain atleast  1 numeric character
+            (?=.*[!@#$%^&])=>The String must contain atleast one special character ,but we are escaping reserved RegEx characters to avoid conflicts
+            */
+            var emailCheck = /^[A-Za-z0-9_.]{3,}@[A-Za-z]{3,}[.]{1}[A-Za-z.]{2,6}$/;
+            var mobileCheck = /^[789]{1}[0-9]{9}$/;
+            if (userCheck.test(user)) {
+                document.getElementById("usererror").innerHTML = ' ';
+            } else {
+                document.getElementById("usererror").innerHTML = 'Please fill valid user name';
+                return (false);
+            }
+            if (passwordCheck.test(pass)) {
+                document.getElementById("passworderror").innerHTML = ' ';
+            } else {
+                document.getElementById("passworderror").innerHTML = 'Please fill valid password';
+                return (false);
+            }
+            if (pass.match(confirmpass)) {
+                document.getElementById("cpassworderror").innerHTML = ' ';
+            } else {
+                document.getElementById("cpassworderror").innerHTML = 'Password does not match';
+                return (false);
+            }
+            if (emailCheck.test(emails)) {
+                document.getElementById("emailerror").innerHTML = ' ';
+            } else {
+                document.getElementById("emailerror").innerHTML = 'Please fill valid email';
+                return (false);
+            }
+            if (mobileCheck.test(mobileNumber)) {
+                document.getElementById("mobileerror").innerHTML = ' ';
+            } else {
+                document.getElementById("mobileerror").innerHTML = 'Please fill valid mobile';
+                return (false);
+            }
+
+        }
+    </script>
+</body>
+
+</html>
