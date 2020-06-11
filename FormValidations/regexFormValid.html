@@ -69,10 +69,12 @@
             var confirmpass = document.getElementById('cpassword').value;
             var mobileNumber = document.getElementById('mobileNumber').value;
             var emails = document.getElementById('email').value;
+
+
             var userCheck = /^[A-Za-z. ]{3,30}$/;
             var passwordCheck = /^(?=.*[0-9])(?=.*[!@#$%^&])[a-zA-Z0-9!@#$%^&*]{8,16}$/;
             /*(?=.*[0-9])->The String must contain atleast  1 numeric character
-            (?=.*[!@#$%^&])=>The String must contain atleast one special character ,but we are escaping reserved RegEx characters to avoid conflicts
+            (?=.*[!@#$%^&])->The String must contain atleast one special character ,but we are escaping reserved RegEx characters to avoid conflicts
             */
             var emailCheck = /^[A-Za-z0-9_.]{3,}@[A-Za-z]{3,}[.]{1}[A-Za-z.]{2,6}$/;
             var mobileCheck = /^[789]{1}[0-9]{9}$/;

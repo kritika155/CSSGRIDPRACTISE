@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        CSS Grid Use grid area Without Creating an Areas Template
+    </title>
+    <style>
+        .container {
+            font-size: 40px;
+            min-height: 300px;
+            width: 100%;
+            background: lightgray;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            grid-gap: 10px;
+            /* justify-items: center; */
+            /* align-items: center; */
+        }
+        
+        .item1 {
+            background: lightsalmon;
+        }
+        
+        .item2 {
+            background: lawngreen;
+        }
+        
+        .item3 {
+            background: yellowgreen;
+        }
+        
+        .item4 {
+            background: blueviolet;
+        }
+        
+        .item5 {
+            background: gold;
+            grid-area: 3/1/4/4;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item1">Item 1</div>
+        <div class="item2">Item 2</div>
+        <div class="item3">Item 3</div>
+        <div class="item4">Item 4</div>
+        <div class="item5">Item 5</div>
+    </div>
+</body>
+
+</html>

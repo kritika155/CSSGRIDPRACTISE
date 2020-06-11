@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        html,
+        body {
+            background-color: #ffeead;
+            margin: 10px;
+        }
+        
+        .container>li {
+            padding: 10px;
+            text-align: center;
+            font-size: 2em;
+            color: #ffeead;
+            box-sizing: border-box;
+            background-color: #96ceb4;
+            list-style-type: none;
+        }
+        
+        .container {
+            border: 5px solid #ffcc5c;
+            display: flex;
+            padding: 0;
+        }
+        
+        .search-input {
+            background: #ff6e68;
+            border: 0;
+            width: 100%;
+        }
+        
+        .search {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .container>li {
+            flex: 1;
+        }
+        
+        @media all and (max-width: 600px) {
+            .container {
+                flex-wrap: wrap;
+                /* height: 10rem; */
+            }
+            .container>li {
+                flex-basis: 50%;
+            }
+            .search {
+                /* max-width: 50%;
+                position: relative;
+                left: 15%; */
+                text-align: center;
+            }
+        }
+        
+        @media all and (max-width: 400px) {
+            .container>li {
+                flex-basis: 100%;
+            }
+            .search {
+                order: 1;
+                /* width: 15%;
+                position: relative; */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul class="container">
+            <li>Home</li>
+            <li>Profile</li>
+            <li class="search">
+                <input type="text" class="search-input" placeholder="Search">
+            </li>
+            <li>Logout</li>
+        </ul>
+    </nav>
+</body>
+
+</html>

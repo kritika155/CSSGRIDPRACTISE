@@ -1,0 +1,35 @@
+.container {
+    border: 5px solid #ffcc5c;
+    display: flex;
+}
+
+div:nth-child(1),
+:nth-child(3) {
+    background: skyblue;
+    width: auto;
+    height: 5rem;
+}
+
+div:nth-child(2) {
+    background: red;
+    width: auto;
+    height: 5rem;
+}
+
+.container div {
+    padding: 10px;
+    text-align: center;
+    font-size: 2rem;
+    color: #ffeead;
+}
+
+html,
+body {
+    background-color: #ffeead;
+    margin: 10px;
+}
+
+
+/* div {
+    display: table-cell;
+} */

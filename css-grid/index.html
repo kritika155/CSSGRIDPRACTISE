@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .container {
+            font-size: 40px;
+            min-height: 300px;
+            width: 100%;
+            background: lightgray;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            grid-gap: 10px;
+        }
+        
+        .item1 {
+            background: lightsalmon;
+            justify-self: end;
+        }
+        
+        .item2 {
+            background: lawngreen;
+            justify-self: start;
+        }
+        
+        .item3 {
+            background: yellowgreen;
+            align-self: end;
+        }
+        
+        .item4 {
+            background: blueviolet;
+            justify-self: center;
+        }
+        
+        .item5 {
+            background: gold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item1">Item 1</div>
+        <div class="item2">Item 2</div>
+        <div class="item3">Item 3</div>
+        <div class="item4">Item 4</div>
+        <div class="item5">Item 5</div>
+    </div>
+</body>
+
+</html>

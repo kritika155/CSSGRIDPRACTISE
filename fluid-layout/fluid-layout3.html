@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <style>
+        .container {
+            /* display: table; */
+            display: block;
+            background: gray;
+            color: black;
+            /* width: 100%; */
+            /* border: 1px solid black; */
+        }
+        
+        .column {
+            /* display: table-cell; */
+            display: block;
+            /* width: 100px; */
+            min-width: 350px;
+            border: 1px solid black;
+            float: left;
+        }
+        
+        @media screen and (max-width: 600px) {
+            .container {
+                /* display: table; */
+                display: block;
+                background: gray;
+                color: white;
+                border: 1px solid black;
+            }
+            .column {
+                /* display: table-cell; */
+                display: block;
+                /* width: 100px; */
+                width: 100%;
+                border: 1px solid black;
+                float: left;
+            }
+        }
+        
+        @media screen and (max-width: 400px) {
+            .container {
+                /* display: table; */
+                display: block;
+                background: gray;
+                color: white;
+                border: 1px solid black;
+                ?
+            }
+            .column {
+                /* display: table-cell; */
+                display: block;
+                /* width: 100px; */
+                min-width: 50%;
+                border: 1px solid black;
+                /* float: left; */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="column">Column 1.</div>
+
+        <div class="column">Column 2 is a bit longer.</div>
+
+        <div class="column">Column 3 is longer with lots of text in it.</div>
+
+    </div>
+
+</body>
+
+</html>

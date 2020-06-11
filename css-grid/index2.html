@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CSS Grid divide the grid into an area template and place items in grid areas using grid area property</title>
+    <style>
+        .container {
+            font-size: 40px;
+            min-height: 300px;
+            width: 100%;
+            background: lightgray;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            grid-gap: 10px;
+            /* justify-items: center; */
+            /* align-items: center; */
+            grid-template-areas: "header header header" "content content content" "footer footer footer";
+        }
+        
+        .item1 {
+            background: lightsalmon;
+            grid-area: header;
+        }
+        
+        .item2 {
+            background: lawngreen;
+        }
+        
+        .item3 {
+            background: yellowgreen;
+        }
+        
+        .item4 {
+            background: blueviolet;
+        }
+        
+        .item5 {
+            background: gold;
+            grid-area: footer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item1">Item 1</div>
+        <div class="item2">Item 2</div>
+        <div class="item3">Item 3</div>
+        <div class="item4">Item 4</div>
+        <div class="item5">Item 5</div>
+    </div>
+</body>
+
+</html>

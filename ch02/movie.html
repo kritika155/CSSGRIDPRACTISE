@@ -1,0 +1,39 @@
+<html>
+
+<head></head>
+
+<body>
+    <button id="mybtn">fetch it</button>
+    <div id="info"></div>
+    <!-- <script>
+            document.getElementById("mybtn").onclick=()=>{
+        fetch("http://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=bd932f11d9f0e79d0f7fcf9c51e3d15b")
+        .then(data=>{
+            return data.json()
+        }).then(data2=>{
+            console.log(data2);
+        })
+            }
+        </script> -->
+    <script>
+        let query = 'Jurrasic Park';
+        const url = `https://api.themoviedb.org/3/search/movie?api_key=24886132d1c22ac49c5c87d4c9d661f0&language=en-US&query=${query}&page=1&include_adult=false`;
+        const url2 = `http://api.openweathermap.org/data/2.5/weather?q=Bangalore&units=metric&APPID=bd932f11d9f0e79d0f7fcf9c51e3d15b`;
+        document.getElementById("mybtn").onclick = () => {
+            fetch("https://api.themoviedb.org/3/search/movie?api_key=24886132d1c22ac49c5c87d4c9d661f0&language=en-US&query=${query}&page=1&include_adult=false")
+                .then(data => {
+                    return data.json()
+                }).then(data2 => {
+                    console.log(data2.results);
+                    // console.log(data2.name);
+                    // console.log(data2.main.temp);
+                    document.getElementById("info").innerHTML = `
+                    <ul>
+                        <li>${data2.original_title}</li>
+                    </ul>`;
+                })
+        }
+    </script>
+</body>
+
+</html>
