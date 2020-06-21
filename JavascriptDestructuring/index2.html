@@ -1,0 +1,39 @@
+<html>
+
+<body>
+    <script>
+        const albumList = [{
+            id: 1,
+            sales: 200
+        }, {
+            id: 2,
+            sales: 250
+        }];
+
+        // function bestSellingAlbum(x) {
+
+        //     return albumList.filter(
+        //         function(album) {
+        //             return album.sales >= x;
+        //         }
+        //     );}
+        const va = albumList.filter(
+            function(album) {
+                return album.sales <= 500;
+            }
+        );
+        const bestSellingAlbum = function(x) {
+
+            return albumList.filter(
+                album => album.sales >= x
+
+            );
+        }
+        const vaa = bestSellingAlbum(100);
+        // console.log(va);
+        console.log(vaa);
+        const bestSellingAlbums = (x) => albumList.filter(album => album.sales >= x);
+    </script>
+</body>
+
+</html>
