@@ -63,6 +63,22 @@
         }
         const sortt = proximity_sort(arr, midpoint);
         console.log(sortt);
+        // partialApplication(targetFunction: Function, ...fixedArgs: Any[]) =>
+        //     functionWithFewerParams(...remainingArgs: Any[])
+
+        function buildUri(scheme, domain, path) {
+            return `${scheme}://${domain}/${path}`
+        }
+        const twitterFavicon = buildUri('https', 'twitter.com', 'favicon.ico');
+        const googleHome = buildUri('https', 'google.com', '');
+        console.log(twitterFavicon);
+        console.log(googleHome);
+
+        function buildHttpsUri(domain, path) {
+            return `https://${domain}/${path}`
+        }
+        const twitterFavicon1 = buildHttpsUri('twitter.com', 'favicon.ico');
+        console.log(twitterFavicon1);
     </script>
 </body>
 
