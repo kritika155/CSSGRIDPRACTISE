@@ -1,0 +1,67 @@
+<html>
+<style>
+    /*center horizontally. styles on parent*/
+    
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 100vh;
+        // flex-direction:column;
+    }
+    /* everything below is just for styling ---
+     box styles
+     not relevant except to look good*/
+    
+    .box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100px;
+        width: 200px;
+        background: #fff;
+        padding: 10px;
+        border-radius: 10px;
+        position: relative;
+        text-align: center;
+    }
+    /* base styles for the overall pen 
+     (not relevant except to look good)*/
+    
+    body {
+        background: #FFC857;
+        overflow-x: hidden;
+        &:before,
+        &:after {
+            display: block;
+            content: '';
+            background: #FF9F4D;
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            z-index: 0;
+        }
+        &:before {
+            top: -100px;
+            left: -100px;
+        }
+        &:after {
+            bottom: -50px;
+            right: -50px;
+        }
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="box">
+            i am a box1!
+        </div>
+        <div class="box">
+            i am a box2!
+        </div>
+    </div>
+</body>
+
+</html>

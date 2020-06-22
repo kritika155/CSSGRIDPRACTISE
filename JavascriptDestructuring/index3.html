@@ -79,6 +79,37 @@
         }
         const twitterFavicon1 = buildHttpsUri('twitter.com', 'favicon.ico');
         console.log(twitterFavicon1);
+
+        // Line 0
+        function fixUriScheme(scheme) {
+            console.log(scheme)
+            return function buildUriWithProvidedScheme(domain, path) {
+                return buildUri(scheme, domain, path)
+            }
+        }
+
+        // Line 1
+        const buildHttpsUri2 = fixUriScheme('https')
+
+        // Outputs: `https://twitter.com/favicon.ico`
+        const twitterFavicon2 = buildHttpsUri2('twitter.com', 'favicon.ico');
+        console.log(twitterFavicon2);
+
+        class UriBuilder {
+
+            constructor(scheme) {
+                this.scheme = scheme
+            }
+
+            buildUri(domain, path) {
+                return `${this.scheme}://${domain}/${path}`
+            }
+        }
+
+        const httpsUriBuilder = new UriBuilder('https');
+
+        const twitterFavicon3 = httpsUriBuilder.buildUri('twitter.com', 'favicon.ico');
+        console.log(twitterFavicon3);
     </script>
 </body>
 
