@@ -110,6 +110,77 @@
 
         const twitterFavicon3 = httpsUriBuilder.buildUri('twitter.com', 'favicon.ico');
         console.log(twitterFavicon3);
+        var customer = {
+            firstName: "John",
+            lastName: "Doe",
+            greetCustomer: function() {
+                console.log("Hello again " + this.firstName + " " + this.lastName + "!")
+            },
+            whatIsMyObject: function() {
+                console.log(this);
+            }
+        }
+
+        customer.greetCustomer();
+        customer.whatIsMyObject();
+
+        var customer = {
+            firstName: "John",
+            lastName: "Doe",
+            greetCustomer: function() {
+                console.log("Hello again " + this.firstName + " " + this.lastName + "!")
+            },
+            whatIsMyObject: function() {
+                console.log(this);
+            },
+            address: {
+                askAddress: function() {
+                    prompt("Dear " + this.firstName + ", please enter your address");
+                },
+                whatIsMyObject: function() {
+                    console.log(this);
+                }
+            }
+        }
+        customer.address.askAddress(); // Prints "Dear undefined, please enter your address"
+        customer.address.askAddress.call(customer); // Prints "Dear John, please enter your address"
+        customer.address.whatIsMyObject(); // Prints the object "address" in the console
+
+        var customer2 = {
+            firstName: "John",
+            lastName: "Doe",
+            greetCustomer: function() {
+                console.log("Hello again " + this.firstName + " " + this.lastName + "!");
+            },
+            calculateAge: function(currentYear, birthDate) {
+                console.log(this.firstName + " is " + (currentYear - birthDate) + " years old.");
+            }
+        }
+
+        customer2.calculateAge(2016, 1956);
+
+        var customer3 = {
+            firstName: "Jane",
+            lastName: "Smith"
+        }
+
+        customer2.calculateAge.call(customer3, 2016, 1984);
+        customer2.calculateAge.apply(customer3, [2016, 1984]);
+
+        var customer = {
+            firstName: "John",
+            lastName: "Doe",
+            greetCustomer: function() {
+                console.log("Hello again " + this.firstName + " " + this.lastName + "!");
+
+                function nestedFunction() {
+                    console.log(this);
+                }
+                nestedFunction.call(customer);
+            }
+        }
+
+        customer.greetCustomer();
     </script>
 </body>
 
