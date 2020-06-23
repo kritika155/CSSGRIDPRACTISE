@@ -1,6 +1,8 @@
+<!DOCTYPE html>
 <html>
 
 <body>
+
     <script>
         const count = (
             function() {
@@ -181,6 +183,46 @@
         }
 
         customer.greetCustomer();
+        var america = {
+            name: 'The United States of America',
+            yearFounded: 1776,
+
+            describe() {
+                console.log(`${this.name} was founded in ${this.yearFounded}.`);
+                console.log(this.name + " was founded in " + this.yearFounded)
+            },
+        }
+
+        america.describe();
+
+        var america2 = {
+            name: 'The United States of America',
+            yearFounded: 1776,
+            details: {
+                country: {
+                    name: ''
+                },
+                symbol: 'eagle',
+                currency: 'USD',
+                printDetails(a) {
+                    this.country.name = a.name;
+                    console.log(this.country.name);
+                    console.log(`The symbol of the ${this.country.name} is ${this.symbol} and the currency is ${this.currency}.`)
+
+                },
+
+            },
+        }
+
+        america2.details.printDetails.call(america2, america2);
+
+        const button = document.createElement('button');
+        button.textContent = 'Click me';
+        document.body.append(button);
+
+        button.addEventListener('click', function(event) {
+            console.log(this)
+        })
     </script>
 </body>
 

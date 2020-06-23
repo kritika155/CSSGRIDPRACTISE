@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <script>
+        var america2 = {
+                name: 'The United States of America',
+                yearFounded: 1776,
+                details: {
+                    symbol: 'eagle',
+                    currency: 'USD',
+                    printDetails(...args) {
+                        var na = args;
+                        console.log(na);
+                        console.log(`The symbol of the ${na[0]} is ${na[1]} and the currency is ${na[2]}.`)
+
+                    },
+                }
+            }
+            // console.log(america2.details.parent.name);
+        var n = america2.name;
+        america2.details.printDetails.call(america2, n, this.america2.details.symbol, this.america2.details.currency);
+
+
+        var main = {
+            name: "main object",
+            child: {
+                name: "child object"
+            },
+            init: function() {
+                this.child.parent = this;
+                delete this.init;
+                return this;
+            }
+        }.init();
+        console.log(main.child.parent.name);
+
+        const button = document.createElement('button')
+        button.textContent = 'Click me'
+        document.body.append(button)
+
+        button.addEventListener('click', function(event) {
+            console.log(this)
+        });
+
+        var oz = {
+            country: 'Australia',
+            capital: 'Canberra',
+            population: '23M'
+        };
+        var nz = {
+            country: 'New Zealand',
+            capital: 'Wellington',
+            population: '4M'
+        };
+        var today = '30/12/2016';
+        var source = 'Wikipedia';
+
+        function getCountryDetails() {
+            console.log(this.country + '\'s capital city is ' + this.capital + ' and as of ' + arguments[0] + ' the country has a population of ' + this.population + ' according to ' + arguments[1]);
+        }
+        getCountryDetails.call(nz, today, source);
+        getCountryDetails.apply(oz, [today, source]);
+        var getOzDetails = getCountryDetails.bind(oz, today, source);
+        getOzDetails(); // we need to manually run the resulting function
+    </script>
+</body>
+
+</html>
